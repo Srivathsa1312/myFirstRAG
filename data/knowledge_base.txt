@@ -1,0 +1,33 @@
+# NovaTech Dynamics - Internal Operations Handbook (2026 Edition)
+
+## 1. Remote Work & Travel Policy
+All NovaTech employees are eligible for the "Work-From-Anywhere-Quarter" program. Under this policy, employees may work from any approved international location for up to 90 days per calendar year. NovaTech provides a monthly internet and co-working stipend of $350 USD. Travel reimbursement requires pre-approval from department heads at least 14 business days prior to departure.
+
+## 2. Equipment & Hardware Allowances
+Every new team member receives a standard hardware bundle:
+- 16-inch custom-configured workstation laptop
+- Dual 4K 27-inch monitors
+- Ergonomic mechanical keyboard and vertical mouse
+- An annual hardware refresh budget of $1,200 USD starting from the second year of tenure.
+All hardware is managed via the NovaShield Zero-Trust MDM platform.
+
+## 3. Project Chimera: Project Scope & Key Milestones
+Project Chimera is NovaTech's flagship next-generation quantum-resistant encryption mesh. 
+Key details:
+- Project Lead: Dr. Elena Rostova
+- Architecture: Lattice-based cryptography combined with post-quantum key encapsulation mechanism (KEM) named "Aegis-7".
+- Deployment Target: Phase 1 alpha rollout is scheduled for November 15, 2026.
+- Target latency: Sub-5ms handshake overhead across distributed nodes.
+
+## 4. Wellness, Leave, and Pet Policy
+NovaTech observes a 4-day workweek during the summer months (June through August) known as "Summer Fridays Off".
+- Annual Leave: 28 days of paid time off (PTO), plus 10 global wellness days.
+- In-Office Pet Policy: Dogs and cats are welcome at the headquarters office on Tuesdays and Thursdays ("Paws & Code Days"). Pets must be registered with building facilities and wear an active RFID badge.
+- Health Stipend: $150 USD per month for gym memberships, therapy, or fitness equipment.
+
+## 5. Security & Incident Response Protocols
+In the event of a suspected credential leak or security anomaly:
+1. Immediately execute the internal command `novactl lockdown --scope=local` on your terminal.
+2. Notify the Security Operations Center (SOC) on Slack channel `#incident-response-red`.
+3. Do not power off your machine; keep memory state intact for forensic analysis.
+4. The designated Incident Commander on duty for 2026 is Marcus Vance.
