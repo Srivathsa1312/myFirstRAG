@@ -55,13 +55,25 @@ def generate_response(query: str, retrieved_chunks: List[Dict[str, Any]]) -> Dic
         try:
             from google import genai
             client = genai.Client(api_key=gemini_key)
-            response = client.models.generate_content(
-                model="gemini-3.6-flash",
-                contents=prompt
-            )
+            models_to_try = ["gemini-3.6-flash", "gemini-3.5-flash", "gemini-3.5-flash-lite"]
+            last_err = None
+            for model_name in models_to_try:
+                try:
+                    response = client.models.generate_content(
+                        model=model_name,
+                        contents=prompt
+                    )
+                    return {
+                        "source": model_name,
+                        "answer": response.text.strip(),
+                        "prompt": prompt
+                    }
+                except Exception as model_err:
+                    last_err = model_err
+                    continue
             return {
-                "source": "gemini-3.6-flash",
-                "answer": response.text.strip(),
+                "source": "offline-fallback",
+                "answer": f"[API Error: {last_err}]. Retrieved relevant context was:\n" + "\n---\n".join(c['text'] for c in retrieved_chunks),
                 "prompt": prompt
             }
         except Exception as e:
