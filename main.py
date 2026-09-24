@@ -8,13 +8,9 @@ Displays the retrieved chunks, similarity scores, and the generated response.
 import os
 import sys
 
-# Ensure src folder is in path
-sys.path.append(os.path.join(os.path.dirname(__file__), "src"))
-try:
-    from src.rag_pipeline import RAGPipeline
-except ImportError:
-    # pyrefly: ignore [missing-import]
-    from rag_pipeline import RAGPipeline
+# Ensure project directory is in sys.path
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+from src.rag_pipeline import RAGPipeline
 
 
 def print_banner():
